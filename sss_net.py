@@ -300,7 +300,6 @@ class S3N(nn.Module):
         return aggregation, agg_origin, agg_sampler, agg_sampler1
 
 
-@register
 def s3n(
         mode: str = 'resnet50',
         num_classes: int = 200,
@@ -317,9 +316,8 @@ def s3n(
     return model
 
 
-@register
 def three_stage(
-        ctx: Context,
+        # ctx: Context, # not use
         train_ctx: Context) -> None:
     """Three stage.
     """
